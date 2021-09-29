@@ -5,7 +5,7 @@ import zipfile
 from telethon import types
 from telethon.tl import functions
 
-from Sophia import TEMP_DOWNLOAD_DIRECTORY
+from Emillaanimebot import TEMP_DOWNLOAD_DIRECTORY
 from Sophia import telethn as client
 from Sophia.events import register
 
