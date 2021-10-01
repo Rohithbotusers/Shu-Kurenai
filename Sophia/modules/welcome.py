@@ -73,6 +73,8 @@ ENUM_FUNC_MAP = {
 
 VERIFIED_USER_WAITLIST = {}
 
+OWNER_IMG = "https://telegra.ph/file/6462f740dc6121a21455c.jpg"
+LEAVE_IMG = "https://telegra.ph/file/759fa2a8057c14a1832fa.mp4"
 
 # do not async
 def send(update, message, keyboard, backup_message):
@@ -189,8 +191,8 @@ def new_member(update: Update, context: CallbackContext):
 
             # Give the owner a special welcome
             if new_mem.id == OWNER_ID:
-                update.effective_message.reply_text(
-                    "Oh, Genos? Let's get this moving.", reply_to_message_id=reply
+                update.effective_message.reply_photo(
+                    OWNER_IMG, caption= "Beware!! A Pero Was Just Arrived On The Chat...", reply_to_message_id=reply
                 )
                 welcome_log = (
                     f"{html.escape(chat.title)}\n"
@@ -545,8 +547,8 @@ def left_member(update: Update, context: CallbackContext):
 
             # Give the owner a special goodbye
             if left_mem.id == OWNER_ID:
-                update.effective_message.reply_text(
-                    "Oi! Genos! He left..", reply_to_message_id=reply
+                update.effective_message.reply_video(
+                    LEAVE_IMG, caption=   "Oh! Aasf! He left😢...", reply_to_message_id=reply
                 )
                 return
 
@@ -1146,7 +1148,7 @@ dispatcher.add_handler(CLEAN_SERVICE_HANDLER)
 dispatcher.add_handler(BUTTON_VERIFY_HANDLER)
 dispatcher.add_handler(WELCOME_MUTE_HELP)
 
-__mod_name__ = "💞Greetings💞"
+__mod_name__ = "Greetings"
 __command_list__ = []
 __handlers__ = [
     NEW_MEM_HANDLER,
