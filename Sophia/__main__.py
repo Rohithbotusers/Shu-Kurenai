@@ -75,45 +75,54 @@ def get_readable_time(seconds: int) -> str:
     return ping_time
 
 
-PM_START_TEXT = f"""
-𝐇𝐞𝐥𝐥𝐨, \n 𝗜'𝗺 Shu kurenai 
-𝗜'𝗺 𝗛𝗲𝗿𝗲 𝘁𝗼 𝗵𝗲𝗹𝗽 𝘆𝗼𝘂𝗿 𝗚𝗿𝗼𝘂𝗽𝘀! 𝗛𝗶𝘁 /help [️️ ️](https://telegra.ph/file/583b241199a6c0c0fa38c.jpg)
-Project By @DihanOfficial ❤
+PM_START_TEXT = """
+ Hey There, I'm [Free De La Hoya](https://telegra.ph/file/c498395c43634b4bd0e91.jpg)
+I Am An Cartoon Themed Group Management Bot.
+Built By Pigasus group admin, I Specialize In Managing Cartoon Eccentric Communities.
 """
 
 buttons = [
     [
         InlineKeyboardButton(
-            text="➕ Add Sophia to your Group ➕", url="t.me/Sophia?startgroup=true"),
-    ],
-    [
-        InlineKeyboardButton(text="Source Code 🗒️", callback_data="source_"),
-        InlineKeyboardButton(
-            text="System Stats 💻", callback_data="stats_callback"
+            text="༒ 𝙰𝙳𝙳 Free De La Hoya 𝚃𝙾 𝚈𝙾𝚄𝚁 𝙶𝚁𝙾𝚄𝙿 ༒",url="http://t.me/FreeDeLaHoyarobot?startgroup=true"
         ),
     ],
     [
-        InlineKeyboardButton(text="🙋‍♀️ Sophia News", url=f"https://t.me/dihanofficial"),
         InlineKeyboardButton(
-            text="💬 Support Group", url=f"https://t.me/dihan_official"
+          text="༺ 𝙲𝙾𝙼𝙼𝙰𝙽𝙳𝚂 & 𝙷𝙴𝙻𝙿 ༻", callback_data="help_back"
         ),
     ],
     [
-        InlineKeyboardButton(text="❓ Commands Help ", callback_data="help_back"),
+        InlineKeyboardButton(
+          text="༄ 𝚄𝙿𝙳𝙰𝚃𝙴 𝙲𝙷𝙰𝙽𝙽𝙴𝙻 ༄", url="https://t.me/PigasusUpdates"
+        ),
+      
+        InlineKeyboardButton(
+          text="★ 𝙲𝙷𝙴𝙲𝙺 𝙼𝚈 𝙵𝚁𝙸𝙴𝙽𝙳 ★", url="https://t.me/VALTAOITHEBOT"
+        ),
+    ],
+         
+    [
+       InlineKeyboardButton(
+           text="✫ 𝚂𝚄𝙿𝙿𝙾𝚁𝚃 𝙲𝙷𝙰𝚃 ✫", url="https://t.me/PigasusSupport"
+         ),
+    ],
+    [
+      InlineKeyboardButton(
+           text="彡 Owner  彡", url="https://t.me/Rohith_no_1"
+        ),
     ],
 ]
 
 
 HELP_STRINGS = """
-`Hi.. I'm` 𝗦𝗼𝗽𝗵𝗶𝗮 
+`Hi.. I'm` free de la hoya
 Click On The Buttons Below To Get Documentation About Specific Modules..
-Powered by @dihanofficial 💓 [️️ ️](https://telegra.ph/file/583b241199a6c0c0fa38c.jpg) """
+Powered by @Pigasusupdates💓 [️️ ️](https://telegra.ph/file/e2f8b71058f0722e67caa.jpg) """
 
 
-DONATE_STRING = """Hey, glad to hear you want to donate!
- You can support the project Of [Dihan Randila](t.me/dihanrandila) \
- Supporting isnt always financial! [Dihan Official](t.me/dihanofficial) \
- Those who cannot provide monetary support are welcome to help us develop the bot at ."""
+DONATE_STRING = """Heya, glad to hear you want to donate!
+ @Rohith_no_1's 💕"""
 
 IMPORTED = {}
 MIGRATEABLE = []
@@ -356,18 +365,18 @@ def help_button(update, context):
 @run_async
 def sophia_about_callback(update, context):
     query = update.callback_query
-    if query.data == "sophia_":
+    if query.data == "Free_":
         query.message.edit_text(
-            text=""" ℹ️ I'm *Sophia*, a powerful group management bot built to help you manage your group easily.
+            text=""" ℹ️ I'm *Free*, a powerful group management bot built to help you manage your group easily.
                  \n* I can restrict users.
                  \n* I can greet users with customizable welcome messages and even set a group's rules.
                  \n* I have an advanced anti-flood system.
                  \n* I can warn users until they reach max warns, with each predefined actions such as ban, mute, kick, etc.
                  \n* I have a note keeping system, blacklists, and even predetermined replies on certain keywords.
                  \n* I check for admins' permissions before executing any command
-                 \n* Awesome Secret @DihanOfficial
-                 \n* Support Group @dihan_official
-                 \* Assistant @SophiaX_Support
+                 \n* Awesome Secret @Pigasusupdates
+                 \n* Support Group @pigasusupdates
+                 \* Assistant @pigasussupport
                  \n\nIf you have any question about Sophia, let us know at .""",
             parse_mode=ParseMode.MARKDOWN,
             disable_web_page_preview=True,
@@ -399,7 +408,7 @@ def Source_about_callback(update, context):
     query = update.callback_query
     if query.data == "source_":
         query.message.edit_text(
-            text=""" Hi..😍 I'm *Sophia*
+            text=""" Hi..😍 I'm *Free de la hoya*
                  \nHere is the [Source Code](https://github.com/dihanofficial/Sophia) .""",
             parse_mode=ParseMode.MARKDOWN,
             disable_web_page_preview=True,
@@ -695,7 +704,7 @@ def main():
 
     if SUPPORT_CHAT is not None and isinstance(SUPPORT_CHAT, str):
         try:
-            dispatcher.bot.sendMessage(f"@{SUPPORT_CHAT}", "I'm Online Now! My Updates @dihanofficial")
+            dispatcher.bot.sendMessage(f"@{SUPPORT_CHAT}", "I'm Ready for battle with my fafniar")
         except Unauthorized:
             LOGGER.warning(
                 "Bot isnt able to send message to @dihan_official, go and check!"
